@@ -88,4 +88,22 @@ public class SoldierTest
         assertTrue(soldier2.isLive());
         assertEquals(0.5f, soldier2.getLife(), 0.0f);
     }
+
+
+    @Test
+    public void soldier_attack_another_soldier_with_machinegun()
+    {
+        Soldier soldier1 = new Soldier();
+        soldier1.setName("Soldier 1");
+        soldier1.setWeapon(new MachineGun());
+
+        Soldier soldier2 = new Soldier();
+        soldier2.setName("Soldier 2");
+
+        assertTrue(soldier2.isLive());
+
+        soldier1.attack(soldier2);
+
+        assertFalse(soldier2.isLive());
+    }
 }
