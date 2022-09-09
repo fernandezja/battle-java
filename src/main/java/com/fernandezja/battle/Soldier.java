@@ -15,4 +15,12 @@ public class Soldier
         this.weapon = value;
     }
 
+    public void attack(ResourceBase target) {
+        if (getWeapon() != null) {
+            super.attack(target, getWeapon().getDamage());
+        } else {
+            super.attack(target);
+        }
+    }
+
 }

@@ -36,8 +36,12 @@ public abstract class ResourceBase
     }
 
 
+    public void attack(ResourceBase target, float damage) {
+        target.setLife(target.getLife() - damage);
+    }
+
     public void attack(ResourceBase target) {
-        target.setLife(target.getLife() - 1);
+        attack(target, 1.0f);
     }
 
     public void attackReception(float damage) {
