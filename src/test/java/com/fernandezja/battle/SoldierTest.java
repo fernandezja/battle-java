@@ -25,4 +25,16 @@ public class SoldierTest
 
         assertEquals("generic print", soldier1.print());
     }
+
+
+    @Test
+    public void soldier_with_a_weapon_knife()
+    {
+        Soldier soldier1 = new Soldier();
+        soldier1.setName("Soldier 1");
+        soldier1.setWeapon(new Knife());
+
+        assertEquals("Knife", soldier1.getWeapon().getName());
+        assertEquals(0.5f, soldier1.getWeapon().getDamage(), 0.0f);
+    }
 }
